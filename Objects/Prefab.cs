@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Created By Brandon
+ * Prefab Object for Project Arythema
+ * To help Import and Export LSB Json Files
+ */
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
@@ -67,7 +72,7 @@ namespace PA_PLUGIN
                     using (StreamReader reader = new StreamReader(fileName))
                     {
                         string s = @reader.ReadToEnd();
-                        prefab = JsonConvert.DeserializeObject<Prefab>(s); ;
+                        prefab = JsonConvert.DeserializeObject<Prefab>(s);
                     }
             }
             catch (Exception e)

@@ -62,6 +62,17 @@ namespace PA_PLUGIN
     }
 
     /// <summary>
+    /// Used For Randomization of Scale, Position, Rotation
+    /// </summary>
+    public enum RandomType
+    {
+        none=0,
+        normal=1,
+        toggle=2,
+        scale=3
+    }
+
+    /// <summary>
     /// Basic Project Arrythma Shape.
     /// </summary>
     public class Shape
@@ -76,7 +87,7 @@ namespace PA_PLUGIN
         [JsonProperty(PropertyName ="name")]    public string Name             { get; set; }
 
         [JsonProperty(PropertyName ="shape", DefaultValueHandling = DefaultValueHandling.Ignore), DefaultValue(ShapeType.Square)]   
-        public ShapeType ShapeType     { get; set; }
+         public ShapeType ShapeType     { get; set; }
 
         [JsonProperty(PropertyName ="akt", DefaultValueHandling = DefaultValueHandling.Ignore), DefaultValue(AutoKillType.NoAutoKill)]
         public AutoKillType AutoKillType { get; set; }
@@ -95,12 +106,12 @@ namespace PA_PLUGIN
     /// <summary>
     /// Used to create movment at a certain time.
     /// </summary>
-    public class KeyFrames
+    public struct KeyFrames
     {
         [JsonProperty(PropertyName ="pos")]  public List<VectorTime> position  { get; set; }
         [JsonProperty(PropertyName ="sca")]  public List<VectorTime> scale     { get; set; }
         [JsonProperty(PropertyName ="rot")]  public List<VarTime> rotation     { get; set; }
-        [JsonProperty(PropertyName = "col")] public List<VarTime> color        { get; set; }
+        [JsonProperty(PropertyName ="col")]  public List<VarTime> color        { get; set; }
     }
 
     /// <summary>
@@ -113,6 +124,19 @@ namespace PA_PLUGIN
         [JsonProperty(PropertyName = "y")] public double Y { get; set; }
         [JsonProperty(PropertyName = "ct",DefaultValueHandling = DefaultValueHandling.Ignore)]
         public ControlType controlType  { get; set; }
+
+        [JsonProperty(PropertyName = "r", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public RandomType typeOfRandom { get; set; }
+
+        [JsonProperty(PropertyName = "rx", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public double randomVarX { get; set; }
+
+        [JsonProperty(PropertyName = "ry", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public double randomVarY { get; set; }
+
+        [JsonProperty(PropertyName = "rz", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public double randomVarZ { get; set; }
+
     }
 
     /// <summary>
@@ -122,6 +146,15 @@ namespace PA_PLUGIN
     {
         [JsonProperty(PropertyName ="t")] public double time       { get; set; }
         [JsonProperty(PropertyName = "x")] public double variable  { get; set; }
+
+        [JsonProperty(PropertyName = "r", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public RandomType typeOfRandom { get; set; }
+
+        [JsonProperty(PropertyName = "rx", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public double randomVarX { get; set; }
+
+        [JsonProperty(PropertyName = "rz", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public double randomVarZ { get; set; }
     }
 
     /// <summary>

@@ -28,9 +28,12 @@ namespace PA_PLUGIN
                 case "Double":
                     writer.WriteValue(((double)value).ToString(CultureInfo.InvariantCulture));
                     break;
+                case "AutoKillType":
+                case "ShapeType":
                 case "Int32":
                     writer.WriteValue(((int)value).ToString(CultureInfo.InvariantCulture));
                     break;
+
                 case "Decimal":
                     writer.WriteValue(((decimal)value).ToString(CultureInfo.InvariantCulture));
                     break;
@@ -40,12 +43,7 @@ namespace PA_PLUGIN
                 case "ControlType":
                     writer.WriteValue(((ControlType)value));
                     break;
-                case "AutoKillType":
-                    writer.WriteValue(((int)value).ToString(CultureInfo.InvariantCulture));
-                    break;
-                case "ShapeType":
-                    writer.WriteValue(((int)value).ToString(CultureInfo.InvariantCulture));
-                    break;
+                
                 default:
                     throw new ApplicationException("Could Not Convert Varible");
             }
