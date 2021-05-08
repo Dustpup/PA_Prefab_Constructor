@@ -13,7 +13,7 @@ public class Program
 {
     static void Main()
     {
-        Prefab pre = Prefab.Load("FILENAME LOCATION"); // Loading the lsb file
+        Prefab pre = Prefab.Load("FILENAME LOCATION"); // Loading the lsb file (( Must Include Extension ))
         Console.WriteLine(pre); // Converts Object to JSON
     }
 }
@@ -29,7 +29,7 @@ public class Program
 {
     static void Main()
     {
-        Prefab pre = Prefab.Load("FILENAME LOCATION"); // Get a PreExisting File to use for saving.
+        Prefab pre = Prefab.Load("FILENAME LOCATION"); // Get a PreExisting File to use for saving. (( Must Include Extension ))
         
         pre.Save("<Location of New File>"); //Saves a new File. ((Must Include File Extension))
         pre.SaveAs("<Location Of Existing File>"); // Overwrites the File. ((Must Include File Extension))
