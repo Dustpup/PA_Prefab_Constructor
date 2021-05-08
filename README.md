@@ -29,7 +29,8 @@ public class Program
 {
     static void Main()
     {
-        Prefab pre = Prefab.Load("FILENAME LOCATION"); // Get a PreExisting File to use for saving. (( Must Include Extension ))
+        //(( Must Include Extension ))
+        Prefab pre = Prefab.Load("FILENAME LOCATION"); // Get a PreExisting File to use for saving. 
         
         //((Must Include File Extension))
         pre.Save("<Location of New File>"); //Saves a new File. 
