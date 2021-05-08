@@ -6,6 +6,7 @@ HOW TO USE
 LOADING THE FILE INTO THE OBJECT.
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+```C#
 using PA_PLUGIN;
 
 public class Program
@@ -16,10 +17,12 @@ public class Program
         Console.WriteLine(pre); // Converts Object to JSON
     }
 }
+```
 
 SAVING THE OBJECT TO A FILE
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+```C#
 Using PA_PLUGIN;
 
 public class Program
@@ -32,3 +35,4 @@ public class Program
         pre.SaveAs("<Location Of Existing File>"); // Overwrites the File.
     }
 }
+```
