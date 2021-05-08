@@ -31,8 +31,8 @@ public class Program
     {
         Prefab pre = Prefab.Load("FILENAME LOCATION"); // Get a PreExisting File to use for saving.
         
-        pre.Save("<Location of New File>"); //Saves a new File.
-        pre.SaveAs("<Location Of Existing File>"); // Overwrites the File.
+        pre.Save("<Location of New File>"); //Saves a new File. ((Must Include File Extension))
+        pre.SaveAs("<Location Of Existing File>"); // Overwrites the File. ((Must Include File Extension))
     }
 }
 ```
